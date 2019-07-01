@@ -22,10 +22,35 @@ function currentLine(line){
     return 'The line is currently empty.'
   } else {
     var i;
+    var outputArray = [];
     for (i = 0; i < line.length; i++){
       var entry =' ' + (i + 1) + '. '
-      line[i] = entry.concat(line[i])
+      outputArray.push(entry.concat(line[i]))
     }
-    return 'The line is currently:' + line 
+    return 'The line is currently:' + outputArray; 
   }
 }
+var place = 1
+
+function takeAnumber2(line){
+  var say
+  line.push(place);
+  
+  var i = line.length;
+  
+  say = 'Welcome, Customer number: ' + place++ +'. You are number ' + i + ' in line.'
+  
+  return say;
+  
+}
+
+var line = []
+takeANumber(line, "Bob")
+takeANumber(line, "John")
+console.log(currentLine(line))
+console.log(takeAnumber2(line))
+console.log(currentLine(line))
+nowServing(line)
+console.log(currentLine(line))
+takeAnumber2(line)
+console.log(currentLine(line))
